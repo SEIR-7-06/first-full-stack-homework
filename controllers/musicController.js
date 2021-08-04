@@ -42,6 +42,14 @@ router.delete('/:musicIndex', (req, res) => {
     res.redirect('/music')
 })
 
+//edit
+router.get('/:musicIndex/edit', (req, res) => {
+    res.render('edit.ejs', {
+        oneSong: music[req.params.musicIndex],
+        index: req.params.fruitIndex
+    })
+})
+
 
 
 

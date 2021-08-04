@@ -21,9 +21,12 @@
         <a href="/music/<%= i %>">
             <h2><%= allMusic[i].name %></h2>
         </a>
+
         <form action='/music/<%= i %>?_method=DELETE' method='POST'>
             <input type='submit' value='Delete this Song'>
         </form>
+
+        <a href='/music/<%= i %>/edit'>Edit this Song</a>
         <% } %>
 </body>
 </html>
