@@ -19,7 +19,18 @@ router.get('/:musicIndex', (req,res) => {
     })
 })
 
+//create
+router.post('/', (req,res) => {
+    console.log(req.body)
 
+    if(req.body.wouldRecommend === 'on'){
+        req.body.wouldRecommend = true
+    } else {
+        req.body.wouldRecommend = false
+    }
 
+    music.push(req.body)
+    res.redirect('/music')
+})
 
 module.exports = router
