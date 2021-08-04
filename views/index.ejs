@@ -10,15 +10,15 @@
     <header>
         <nav>
             <ul>
-                <li><a href="/music">All Music</a></li>
-                <li><a href="/music/new">Add a Song</a></li>
+                <li><a href='/music'>All Music</a></li>
+                <li><a href='/music/new'>Add a Song</a></li>
             </ul>
         </nav>
     </header>
     
     <h1>Music:</h1>
     <% for(let i = 0; i < allMusic.length; i++) { %>
-        <a href="/music/<%= i %>">
+        <a href='/music/<%= i %>'>
             <h2><%= allMusic[i].name %></h2>
         </a>
 
