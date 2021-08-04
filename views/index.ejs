@@ -6,24 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Music Index</title>
 </head>
-
-
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="/music">All Bands</a></li>
+                <li><a href="/music">All Music</a></li>
                 <!-- <li><a href="/fruits/new">Create a Fruit</a></li> -->
             </ul>
         </nav>
     </header>
     
-    <h1>Some Amazing Bands:</h1>
-    <% for(let i = 0; i < allBands.length; i++) { %>
+    <h1>Some Amazing Music:</h1>
+    <% for(let i = 0; i < allMusic.length; i++) { %>
         <a href="/music/<%= i %>">
-            <h2><%= allBands[i].name %></h2>
+            <h2><%= allMusic[i].name %></h2>
         </a>
-
     <% } %>
 </body>
 </html>

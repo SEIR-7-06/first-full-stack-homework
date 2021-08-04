@@ -1,17 +1,17 @@
 const music = [
     {
-        name: 'Glass Animals',
-        bestSong: 'Season 2 Episode 3',
-        firstAlbum: 'Zaba'
+        name: 'Season 2 Episode 3',
+        artist: 'Glass Animals',
+        wouldRecommend: true
     },
     {
-        name: 'Børns',
-        bestSong: 'Past Lives',
-        firstAlbum: 'Dopamine'
+        name: 'Past Lives',
+        artist: 'Børns',
+        wouldRecommend: true
     },
     {
-        name: 'The Vaccines',
-        bestSong: 'A Lack of Understanding',
-        firstAlbum: 'What Did You Expect from The Vaccines'
+        name: 'A Lack of Understanding',
+        artist: 'The Vaccines',
+        wouldRecommend: true
     }
 ]
