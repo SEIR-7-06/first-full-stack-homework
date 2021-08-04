@@ -33,4 +33,19 @@ router.post('/', (req,res) => {
     res.redirect('/music')
 })
 
+//delete
+router.delete('/:musicIndex', (req, res) => {
+    const musicIndex = req.params.musicIndex
+
+    music.splice(musicIndex, 1)
+
+    res.redirect('/music')
+})
+
+
+
+
+
+
+
 module.exports = router

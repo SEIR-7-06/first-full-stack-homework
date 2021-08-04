@@ -16,11 +16,14 @@
         </nav>
     </header>
     
-    <h1>Some Amazing Music:</h1>
+    <h1>Music:</h1>
     <% for(let i = 0; i < allMusic.length; i++) { %>
         <a href="/music/<%= i %>">
             <h2><%= allMusic[i].name %></h2>
         </a>
+        <form action='/music/<%= i %>?_method=DELETE' method='POST'>
+            <input type='submit' value='Delete this Song'>
+        </form>
         <% } %>
 </body>
 </html>
