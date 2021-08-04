@@ -50,6 +50,22 @@ router.get('/:musicIndex/edit', (req, res) => {
     })
 })
 
+//update
+router.put('/:fruitIndex', (req,res) => {
+    console.log(req.body)
+
+    if(req.body.wouldRecommend === 'on'){
+        req.body.wouldRecommend = true
+    } else {
+        req.body.wouldRecommend = false
+    }
+
+    console.log(req.body)
+
+    music[req.params.musicIndex] = req.body
+    
+    res.redirect('/music/' + req.params.musicIndex)
+})
 
 
 
