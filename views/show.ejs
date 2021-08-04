@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Songs</title>
+</head>
+<body>
+  <header>
+    <nav>
+        <ul>
+            <li><a href="/music">All Music</a></li>
+            <li><a href="/music/new">Add a Song</a></li>
+        </ul>
+    </nav>
+  </header>
+  <h1>Songs</h1>
+  <p><%= oneSong.name %> by <%= oneSong.artist %>.</p>
+  <% if(oneSong.wouldRecommend === true){ %>
+      <p>Would Recommend!</p>
+  <% } else { %>
+      <p>Would not Recommend!</p>
+  <% } %>
+</body>
+</html>

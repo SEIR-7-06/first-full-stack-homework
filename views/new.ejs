@@ -17,11 +17,16 @@
     </header>
     <h1>Add Music</h1>
     <form action='/music' method='POST'>
-    <label for='name'>Name:</label>
-    <label for='artist'>Artist:</label>
-    <input name='wouldRecommend' type='checkbox'>
-    <br>
-    <input type='submit' value='Add Song'>
+        <label for='name'>Name:</label>
+        <input name='name' type='text'>
+        <br>
+        <label for='artist'>Artist:</label>
+        <input name='artist' type='text'>
+        <br>
+        <label for='wouldRecommend'>Would Recommend?</label>
+        <input name='wouldRecommend' type='checkbox'>
+        <br>
+        <input type='submit' value='Add Song'>
     </form>
 </body>
 </html>

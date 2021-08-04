@@ -15,3 +15,5 @@ const music = [
         wouldRecommend: true
     }
 ]
+
+module.exports = music
