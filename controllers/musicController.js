@@ -46,12 +46,12 @@ router.delete('/:musicIndex', (req, res) => {
 router.get('/:musicIndex/edit', (req, res) => {
     res.render('edit.ejs', {
         oneSong: music[req.params.musicIndex],
-        index: req.params.fruitIndex
+        index: req.params.musicIndex
     })
 })
 
 //update
-router.put('/:fruitIndex', (req,res) => {
+router.put('/:musicIndex', (req,res) => {
     console.log(req.body)
 
     if(req.body.wouldRecommend === 'on'){
