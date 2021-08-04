@@ -15,10 +15,9 @@ router.get('/new', (req, res) => {
 //show
 router.get('/:musicIndex', (req,res) => {
     res.render('show.ejs', {
-        oneSong: music[req.params]
+        oneSong: music[req.params.musicIndex]
     })
 })
-
 
 
 
