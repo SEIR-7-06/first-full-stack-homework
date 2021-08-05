@@ -20,3 +20,6 @@ mongoose.connection.on('connected', () => {
 })
 
 //export data model from here that will serve as collection
+module.exports = {
+    Male: require('./Male.js')
+}

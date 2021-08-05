@@ -19,8 +19,8 @@ const rowdyResults = rowdy.begin(app);
 app.set('view engine', 'ejs'); //allows ejs to be used
 
 //Uses
-app.use(methodOverride('_method'));
-app.use(express.urlencoded({extended: false}));
+app.use(methodOverride('_method')); //keeps an eye out for _method queries
+app.use(express.urlencoded({extended: false})); //checks for data from forms
 //for pulling our routes from our controller later --> NEED TO DO
 // app.use('/routeName', controllerName)
 
