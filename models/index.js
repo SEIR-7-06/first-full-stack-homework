@@ -17,7 +17,7 @@ mongoose.connect(address, {
 
 mongoose.connection.on('connected', () => {
     console.log(`Mongoose connected to ${address}.`)
-})
+});
 
 //export data model from here that will serve as collection
 module.exports = {
