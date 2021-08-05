@@ -11,10 +11,14 @@ const app = express();
 const port = 4006;
 const rowdyResults = rowdy.begin(app);
 
+/* DATABASE & MODULES */
+const planetsController = require('./controllers/planetsController.js');
+
 /* MIDDLEWARE */
 app.set('view engine', 'ejs'); //allows ejs to be used to render the view pages
-app.use(methodOverride('method'));
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
+app.use('/planets', planetsController);
 
 /* ROUTES */
 
