@@ -7,8 +7,7 @@ const rowdy = require('rowdy-logger')
 //helps with methods and overriding them in forms for actions
 const methodOverride = require('method-override');
 
-//Databases & Models 
-// const fruits = require('./models/fruitModel.js') // The "database"
+//Databases & Models -->NEED TO DO
 // const fruitsController = require('./controllers/fruitsController.js');
 
 // Variables
@@ -22,7 +21,7 @@ app.set('view engine', 'ejs'); //allows ejs to be used
 //Uses
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: false}));
-//for pulling our routes from our controller later
+//for pulling our routes from our controller later --> NEED TO DO
 // app.use('/routeName', controllerName)
 
 
