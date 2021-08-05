@@ -1,0 +1,39 @@
+// Get the Express app in order
+// Set up the controllers
+
+/* REQUIRED MODULES */
+const express = require('express');
+const rowdy = require('rowdy-logger');
+const methodOverride = require('method-override');
+
+/* VARIABLES */
+const app = express();
+const port = 4006;
+const rowdyResults = rowdy.begin(app);
+
+/* MIDDLEWARE */
+app.set('view engine', 'ejs'); //allows ejs to be used to render the view pages
+app.use(methodOverride('method'));
+app.use(express.urlencoded({ extended: false }));
+
+/* ROUTES */
+
+// Index page
+app.get('/', (req, res) => {
+    res.render('index.ejs');
+});
+
+// Create
+
+// Show
+
+// Update
+
+// Delete
+
+
+/* START THE SERVER */
+app.listen(port, () => {
+    console.log(`Server running on port: ${port}`);
+    rowdyResults.print();
+})
