@@ -17,6 +17,8 @@ mongoose.connection.on('connected', () => {
     console.log(`Mongoose connected to ${connectionString} 🥭`);
 });
 
+
+
 /* Export data model */
 module.exports = {
     Capy: require('./Capy.js')
