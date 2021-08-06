@@ -1,10 +1,14 @@
 const express = require('express');
+const db = require('../models/index.js')
 const router = express.Router();
-// const db = require('../views/index.ejs')
 
 router.get('/', (req, res) =>{
-    res.render('../views/index.ejs');
+    db.Robot.find({}, (err, allRobots) => {
+        if (err) return console.log(err)
+        res.render('robots/robotsIndex.ejs', {allRobots: allRobots})
+    })
 })
+
 
 
 module.exports = router

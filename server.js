@@ -5,7 +5,7 @@ const methodOverride = require('method-override');
 const robotsController = require('./controllers/robotsController')
 
 const app = express();
-const port = 3000;
+const PORT = 3000;
 const rowdyResults = rowdy.begin(app);
 
 
@@ -15,12 +15,16 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: false}));
 app.use('/robots', robotsController);
 
+
+
 app.get('/', (req, res) => {
-    res.send('Welcome to the robots app 🦾')
+    res.render('index')
 })
 
-app.listen(port, () => {
-    console.log(`This server is running on port: ${port} 🦿`);
+
+
+app.listen(PORT, () => {
+    console.log(`This server is running on port: ${PORT} 🦿`);
     rowdyResults.print()
 })
 
