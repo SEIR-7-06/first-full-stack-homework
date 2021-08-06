@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index Page</h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/capy">all capy</a></li>
+                <li><a href="/capy/new">create a capy</a></li>
+            </ul>
+        </nav>
+      </header>
+    <% for(let i = 0; i < allCapy.length; i++) { %>
+        <a href="/capy/<%= allCapy[i]._id  %>">
+            <h2><%= allCapy[i].name %></h2>
+        </a>
+        <h2><%=allCapy[i].age%></h2>
+        <form action="/capy/<%= allCapy[i]._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete this capy">
+        </form>
+        <a href="/capy/<%= allCapy[i]._id  %>/edit">Edit this capy</a>
+    <% } %>
+</body>
+</html>
