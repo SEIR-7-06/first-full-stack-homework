@@ -1,0 +1,13 @@
+body {
+    margin: 0px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+nav a {
+    text-decoration: none;
+}
