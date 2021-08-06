@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Appointments</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/nails">All Nail Appointments</a></li>
+                <li><a href="/nails/new">Create New Nail Appointment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <h1>Create a New Nail Appoinemnt 💅🏽 🌺</h1>
+    <form action="/nails" methods="POST">
+        <label for="service">Service:</label>
+        <input name="service" type="text">
+        <br>
+        <label for="color">Color:</label>
+        <input name="color" type="text">
+        <br>
+        <label for="shape">Shape:</label>
+        <input name="shape" type="text">
+        <br>
+        <label for="date">Date:</label>
+        <input name="date" type="text">
+        <br>
+        <label for="time">Time:</label>
+        <input name="time" type="text">
+        <br>
+        <input type="submit" value="Book Appoinemnt">
+    </form>
+
+</body>
+</html>

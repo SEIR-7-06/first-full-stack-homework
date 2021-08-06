@@ -4,9 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nail Appoinemnt</title>
 </head>
 <body>
-    <h1>Nails Nails & More Nails Page 💁🏽‍♀️💅🏽 </h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/nails">All Nail Appointments</a></li>
+                <li><a href="/nails/new">Create New Nail Appoinemnt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+<h1>Nail Appointment Show Page 💅🏽🔮</h1>
+<p>You appintment is scheduled for <%= oneNail.date %> at <%= oneNail.time%>. </p>
+<p>For a <%= oneNail.service %> with a nail shape of <%= oneNail.shape %> and color of <%= oneNail.color%>. </p> 
+
 </body>
 </html>

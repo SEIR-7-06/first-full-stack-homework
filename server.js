@@ -5,7 +5,7 @@ const rowdy = require('rowdy-logger');
 const methodOverride = require('method-override');
 
 // Database and Modules // 
-// const fruits = require('./models/fruitModel.js')
+ const nails = require('./models/NailsModel.js')
 // const fruitsController = require('./controllers/fruitsController.js');
 
 // Variables // 
@@ -15,7 +15,7 @@ const rowdyResults = rowdy.begin(app);
 
 
 // Middleware// 
-
+app.set('view engine', 'ejs');
 
 
 // Check if form data was sent in the request.
@@ -24,11 +24,31 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: false}));
 
 
-// Routes //
+//////// ROUTES //////
+
+// HomePage //
 app.get('/',(req,res) => {
     res.send("Welcome to THE GIRLSSS ROOMMM!! 💅🏽🧚🏽‍♀️💗")
 })
 
+// Index Route //
+app.get('/nails', (req, res) => {
+    res.render('index.ejs', {
+        allNails: nails
+    })
+})
+
+// New Route // 
+app.get('/nails/new', (req, res) => {
+    res.render('new.ejs')
+})
+
+// Show Route // 
+app.get('/nails/:nailIndex', (req, res) => {
+    res.render('show.ejs', {
+        oneNail: nails[req.params.nailIndex]
+    })
+})
 
 
 
