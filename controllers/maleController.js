@@ -54,7 +54,11 @@ router.put('/:maleId', (req,res) => {
 
 //Delete Route
 router.delete('/:maleId', (req, res) => {
-    console.log("you've hit the delete route")
+    const maleId = req.params.maleId;
+    db.Male.findByIdAndDelete(maleId, (err) => {
+        if (err) return console.log(err)
+        res.redirect('/males');
+    })
 })
 
 module.exports = router;
