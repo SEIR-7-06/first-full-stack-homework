@@ -16,10 +16,29 @@
             </ul>
         </nav>
     </header>   
-    <h1>Here you can update a single male</h1>
-    <p>There will be form here soon and it'll be auto populated with values</p>
-    <!-- <form action = "/male/
-
-    </form> -->
+    <h1>Below you can edit <%= oneMale.name %>'s character info.</h1>
+    <form action ="/male/<%=oneMale._id%>?_method=PUT" method = "POST"></form>
+        <label for = "name">Name: </label>
+        <input type = "text" id = "maleName" name = "name" value = "<%= oneMale.name %>"/>
+        <br>
+        <br>
+        <label for = "show">Show: </label>
+        <input type = "text" id= "showName" name = "show" value = "<%= oneMale.show%>"/>
+        <br>
+        <br>
+        <label for = "age">Age: </label>
+        <input type = "text" id = "characterAge" name = "age" value = "<%= oneMale.age%>"/>
+        <br>
+        <br>
+        <label for = "favorite">Favorite: </label>
+        <input type = "checkbox" id = "favoriteRank" name = "favorite" <%= oneMale.favorite ? "checked": "" %>/>
+        <br>
+        <br>
+        <label for = "image"> Change the Picture: </label>
+        <input type = "text" id = "pic" name = "image" value = "<%= oneMale.image%>"/>
+        <br>
+        <br>
+        <input type = "submit" value = "Submit These Changes"
+    </form>
 </body>
 </html>
