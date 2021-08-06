@@ -17,5 +17,13 @@
         </nav>
     </header>   
     <h1>This is where you can view a single male</h1>
+    <p> <%=singleMale.name%> is a character on <%= singleMale.show %>.</p>
+    <p> His age is <%= singleMale.age%>.</p>
+    <%  if (singleMale.favorite === true) {%>  
+        <p>He is one of my favorite characters.</p>
+    <% } %>
+    <br>
+    <br>
+    <img src = "<%= singleMale.image %>" alt = "Picture of lead">
 </body>
 </html>
