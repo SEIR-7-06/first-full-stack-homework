@@ -7,7 +7,12 @@ const db = require('../models/index.js')
 
 //Index Route --> needs ejs
 router.get('/', (req, res) => {
-    res.render('index.ejs')
+    db.Male.find({}, (err, allMales) => {
+        if (err) return console.log(err);
+        res.render('index.ejs', {
+            allMales: allMales
+        })
+    })
 })
 
 //New Route --> needs ejs, form and sends form to create route 
@@ -22,7 +27,7 @@ router.get('/:maleId', (req, res) => {
 
 //Create Route
 router.post('/', (req, res) => {
-    console.log("you reached the create route")
+    // console.log("you reached the create route")
     //we do this so it can show up in the data regardless of on or off status
     if (req.body.favorite === 'on') {
         req.body.favorite = true;
@@ -34,21 +39,22 @@ router.post('/', (req, res) => {
         console.log(createdMale) //checking myself
         res.redirect('/male')
     })
-    console.log(req.body)
 })
 
 //Edit Route --> needs ejs, form and sends form to update route
 router.get('/:maleId/edit', (req, res) => {
     res.render('update.ejs')
 })
+
 //Update Route --> 
 router.put('/:maleId', (req,res) => {
+    console.log("you've hit the update route")
     console.log(req.body);
 })
 
 //Delete Route
 router.delete('/:maleId', (req, res) => {
-
+    console.log("you've hit the delete route")
 })
 
 module.exports = router;

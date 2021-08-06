@@ -17,8 +17,12 @@
             </ul>
         </nav>
     </header>   
-    <h1>This is an index of all the male leads.</h1>
-    <!-- -->
+    <h1>Here are my favorite male anime leads.</h1>
+    <% for (let i = 0; i < allMales.length; i++) {%>
+        <a href = "/male/<%= allMales[i]._id %>">
+            <h3><%= allMales[i].name%></h3>
+        </a>
+    <% } %>
 </body>
 </html>
 
