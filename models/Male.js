@@ -8,7 +8,7 @@ const maleSchema = new mongoose.Schema({
     name: { type: String, required: true, unique: true},
     show: { type: String, required: true },
     age: { type: String, required: true },
-    favoriteRank: String,
+    favorite: Boolean,
     image: String
 })
 

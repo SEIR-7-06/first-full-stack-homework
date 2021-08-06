@@ -27,6 +27,6 @@ app.use('/male', maleController)
 
 //Start the Server
 app.listen(port, () => {
-    console.log("Hello")
+    console.log("Running at " + port + ".")
     rowdyResults.print()
 });
