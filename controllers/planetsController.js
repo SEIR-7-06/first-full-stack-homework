@@ -43,24 +43,17 @@ router.get('/:id', (req, res) => {
         if(err) return console.log(err);
         res.render('planets/planetsShow.ejs', {onePlanet: foundPlanet });
     })
-    // 🚫 TODO: 1. Find the article by it's id
-    // db.Article.findById(req.params.id, (err, foundArticle => { 
-    // 🚫 TODO: 2. Pass the data to an ejs template (articlesShow.ejs)
-    // 🚫 TODO: 3. res.render() that page
     res.send('STUB: Heres the individual article you requested')
 })
 
 // Edit route (GET) - display the form with the current data populating the fields
 router.get('/:id/edit', (req, res) => {
-    // 🚫 TODO: 1. Find the article specified by req.params.id
-    db.findById(req.params.id, (err, foundArticle) => { 
+    db.Planet.findById(req.params.id, (err, foundPlanet) => { 
         if(err) return console.log(err);
-        
-    // 🚫 TODO: 2. Pass the data to the edit page so you can display the current data 
-    // 🚫 TODO: 3. Create a form that does a PUT to /articles/:id
-    // 🚫 TODO: 4. res.render the edit page template
-    res.send('STUB: Here is the form for editing that article')
-})
+        res.render('planets/planetsEdit.ejs', {onePlanet: foundPlanet});
+    });
+    res.send(`STUB: Heres the edit form you requested`);
+});
 
 // Update route (PUT)
 router.put('/:id', (req, res) => {
@@ -77,7 +70,10 @@ router.put('/:id', (req, res) => {
 
 // Delete route (PUT)
 router.put('/:id', (req, res) => {
-    db.findByIdAndDelete(req.params.id);
+    db.Planet.findByIdAndRemove(req.params.id, (err, foundPlanet => {
+        if(err) return console.log(err);
+        res.redirect('/planets');
+    }));
     res.send('STUB: Article has been deleted')
 })
 
