@@ -59,8 +59,15 @@ router.get('/:maleId/edit', (req, res) => {
 
 //Update Route --> updates the db data
 router.put('/:maleId', (req,res) => {
-    console.log("you've hit the update route")
-    console.log(req.body);
+    if (req.body.favorite === 'on') {
+        req.body.favorite = true;
+    } else {
+        req.body.favorite = false;
+    }
+    db.Male.findByIdAndUpdate(req.params.maleId, req.body, (err, updatedCharacter) => {
+        if (err) return console.log(err)
+        res.redirect(`/male/${req.params.maleId}`)
+    })
 })
 
 //Delete Route --> DONE

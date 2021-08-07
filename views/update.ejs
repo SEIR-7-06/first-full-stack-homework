@@ -17,7 +17,7 @@
         </nav>
     </header>   
     <h1>Below you can edit <%= oneMale.name %>'s character info.</h1>
-    <form action ="/male/<%=oneMale._id%>?_method=PUT" method = "POST"></form>
+    <form action ="/male/<%=oneMale._id%>?_method=PUT" method = "POST">
         <label for = "name">Name: </label>
         <input type = "text" id = "maleName" name = "name" value = "<%= oneMale.name %>"/>
         <br>
@@ -38,7 +38,7 @@
         <input type = "text" id = "pic" name = "image" value = "<%= oneMale.image%>"/>
         <br>
         <br>
-        <input type = "submit" value = "Submit These Changes"
+        <input type = "submit" value = "Submit These Changes"/>
     </form>
 </body>
 </html>
