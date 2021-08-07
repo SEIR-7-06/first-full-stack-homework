@@ -13,28 +13,40 @@
         <h1>Add a Character</h1>
         <h2>fill out the form below</h2>
     </header>   
-    <form action="/male" method="POST">
-        <label for="name">Name: </label>
-        <input type = "text" id ="maleName" name="name"/>
+    <form action="/male" method="POST" class = "form">
+        <div class = "box">
+            <label for="name">Name: </label>
+            <input type = "text" id ="maleName" name="name"/>
+        </div>  
         <br>
         <br>
-        <label for="show">Show: </label>
-        <input type = "text" id ="showName" name="show"/>
+        <div class = "box">
+            <label for="show">Show: </label>
+            <input type = "text" id ="showName" name="show"/>
+        </div>
         <br>
         <br>
-        <label for="age">Age: </label>
-        <input type = "text" id ="characterAge" name="age"/>
+        <div class = "box">
+            <label for="age">Age: </label>
+            <input type = "text" id ="characterAge" name="age"/>
+        </div>
         <br>
         <br>
-        <label for="favorite">Favorite: </label>
-        <input type = "checkbox" id ="favoriteRank" name="favorite"/>
+        <div class = "box">
+            <label for="favorite">Favorite: </label>
+            <input type = "checkbox" id ="favoriteRank" name="favorite"/>
+        </div>
         <br>
         <br>
-        <label for="image">Add a Picture: </label>
-        <input type = "text" id ="pic" name="image"/>
+        <div class = "box">
+            <label for="image">Add a Picture: </label>
+            <input type = "text" id ="pic" name="image"/>
+        </div>
         <br>
         <br>
-        <input class = "button" type= "submit" value = "Add This Character"/>
+        <div class = "button-in-box">
+            <input class = "button" type= "submit" value = "Add This Character"/>
+        </div>
     </form>
 </body>
 </html>
