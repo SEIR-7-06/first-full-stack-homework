@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <%-include('./templates/navbar.ejs')%>
+        <h1>Male Anime Leads</h1>
+    </header>   
+    <% for (let i = 0; i < allMales.length; i++) {%>
+        <a href = "/male/<%= allMales[i]._id %>">
+            <h3><%= allMales[i].name%></h3>
+        </a>
+        <button class="button"><a href="/male/<%= allMales[i]._id %>/edit">Update Character</a></button>
+        <br>
+        <br>
+        <form action = "/male/<%= allMales[i]._id %>?_method=DELETE" method = "POST" class = "index-form"> 
+            <input class = "button" type = "submit" value = "Delete Character">
+        </form>
+    <% } %>
+</body>
+</html>
+

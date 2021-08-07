@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <%-include('./templates/navbar.ejs')%>
+        <h1>View a Single Character</h1>
+    </header>   
+    <p> <%=singleMale.name%> is a character on <%= singleMale.show %>.</p>
+    <p> His age is <%= singleMale.age%>.</p>
+    <%  if (singleMale.favorite === true) {%>  
+        <p>He is one of my favorite characters.</p>
+    <% } else { %>
+        <p><%=""%></p>
+    <% } %>
+    <br>
+    <br>
+    <img src = "<%= singleMale.image %>" alt = "Picture of lead">
+</body>
+</html>

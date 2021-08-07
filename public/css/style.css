@@ -1,0 +1,74 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat&display=swap');
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #385E72;
+    color: #D9E4EC;
+    font-family: 'Montserrat';
+    text-align: center;
+}
+
+header {
+    background-color: #6AABD2;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Lilita One';
+    font-size: 3rem;
+    padding: 10px;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+.a-tags {
+    padding: 40px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+.button{
+    padding: 10px;
+    font-size: .8rem;
+    font-family: 'Montserrat';
+    color: #D9E4EC;
+    background-color: #B7CFDC
+}
+
+.button:hover {
+    background-color: #0C2D48
+}
+
+p {
+    padding: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 30px;
+}
+
+.box {
+    font-size: 1.1rem;
+    margin: 10px;
+}
+
+.button-in-box {
+    display: block;
+}
+
+.index-form {
+    margin-bottom: 30px;
+}

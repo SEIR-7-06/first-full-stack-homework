@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <%- include('./templates/navbar.ejs')%>
+        <h1>Add a Character</h1>
+        <h2>fill out the form below</h2>
+    </header>   
+    <form action="/male" method="POST" class = "form">
+        <div class = "box">
+            <label for="name">Name: </label>
+            <input type = "text" id ="maleName" name="name"/>
+        </div>  
+        <br>
+        <br>
+        <div class = "box">
+            <label for="show">Show: </label>
+            <input type = "text" id ="showName" name="show"/>
+        </div>
+        <br>
+        <br>
+        <div class = "box">
+            <label for="age">Age: </label>
+            <input type = "text" id ="characterAge" name="age"/>
+        </div>
+        <br>
+        <br>
+        <div class = "box">
+            <label for="favorite">Favorite: </label>
+            <input type = "checkbox" id ="favoriteRank" name="favorite"/>
+        </div>
+        <br>
+        <br>
+        <div class = "box">
+            <label for="image">Add a Picture: </label>
+            <input type = "text" id ="pic" name="image"/>
+        </div>
+        <br>
+        <br>
+        <div class = "button-in-box">
+            <input class = "button" type= "submit" value = "Add This Character"/>
+        </div>
+    </form>
+</body>
+</html>
