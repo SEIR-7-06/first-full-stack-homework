@@ -8,15 +8,9 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="/male">Home Page</a></li>
-                <li><a href="/male/:maleId">Show One</a></li>
-                <li><a href="/male/new">Add One</a></li>
-            </ul>
-        </nav>
+        <%-include('./templates/navbar.ejs')%>
+        <h1>Male Anime Leads</h1>
     </header>   
-    <h1>Here are my favorite male anime leads.</h1>
     <% for (let i = 0; i < allMales.length; i++) {%>
         <a href = "/male/<%= allMales[i]._id %>">
             <h3><%= allMales[i].name%></h3>

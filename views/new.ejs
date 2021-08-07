@@ -8,15 +8,10 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="/male">Home Page</a></li>
-                <li><a href="/male/:maleId">Show One</a></li>
-                <li><a href="/male/new">Add One</a></li>
-            </ul>
-        </nav>
+        <%- include('./templates/navbar.ejs')%>
+        <h1>Add a Character</h1>
+        <h2>fill out the form below</h2>
     </header>   
-    <h1>This is the add a male lead page.</h1>
     <form action="/male" method="POST">
         <label for="name">Name: </label>
         <input type = "text" id ="maleName" name="name"/>
