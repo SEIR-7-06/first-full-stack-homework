@@ -41,7 +41,7 @@ router.post('/', (req, res) => {
     }
     db.Male.create(req.body, (err, createdMale) => {
         if (err) return console.log(err);
-        console.log(createdMale) //checking myself
+        // console.log(createdMale) //checking myself
         res.redirect('/male')
     })
 })

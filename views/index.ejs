@@ -19,7 +19,7 @@
         <button class="button"><a href="/male/<%= allMales[i]._id %>/edit">Update Character</a></button>
         <br>
         <br>
-        <form action = "/male/<%= allMales[i]._id %>?_method=DELETE" method = "POST"> 
+        <form action = "/male/<%= allMales[i]._id %>?_method=DELETE" method = "POST" class = "index-form"> 
             <input class = "button" type = "submit" value = "Delete Character">
         </form>
     <% } %>
