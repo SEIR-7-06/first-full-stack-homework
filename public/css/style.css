@@ -37,16 +37,16 @@ a:visited {
     color: white;
 }
 
-a:hover {
-    color: #0C2D48;
-}
-
 .button{
     padding: 10px;
     font-size: .8rem;
     font-family: 'Montserrat';
     color: #D9E4EC;
     background-color: #B7CFDC
+}
+
+.button:hover {
+    background-color: #0C2D48
 }
 
 p {
