@@ -7,6 +7,7 @@ const rowdy = require('rowdy-logger')
 //helps with methods and overriding them in forms for actions
 const methodOverride = require('method-override');
 
+
 //Databases & Models
 const maleController = require('./controllers/maleController.js')
 
@@ -21,7 +22,8 @@ app.set('view engine', 'ejs'); //allows ejs to be used
 //Uses
 app.use(methodOverride('_method')); //keeps an eye out for _method queries
 app.use(express.urlencoded({extended: false})); //checks for data from forms
-//for pulling our routes from our controller later --> NEED TO DO
+app.use(express.static('public'))
+//for pulling our routes from our controller later --> DONE 
 app.use('/male', maleController)
 
 
