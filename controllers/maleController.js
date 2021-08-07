@@ -46,7 +46,7 @@ router.post('/', (req, res) => {
     })
 })
 
-//Edit Route --> needs ejs, form and sends form to update route
+//Edit Route --> DONE  //needs ejs, form and sends form to update route
 router.get('/:maleId/edit', (req, res) => {
     maleId = req.params.maleId
     db.Male.findById(maleId, (err, foundMale) => {
@@ -57,7 +57,7 @@ router.get('/:maleId/edit', (req, res) => {
     })
 })
 
-//Update Route --> updates the db data
+//Update Route --> DONE //updates the db data
 router.put('/:maleId', (req,res) => {
     if (req.body.favorite === 'on') {
         req.body.favorite = true;
