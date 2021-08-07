@@ -4,7 +4,7 @@
 const mongoose = require('mongoose');
 
 // Get the address to the Mongo database
-const connectionString = 'mongodb://localhost:27018/planetsdb';
+const connectionString = 'mongodb://localhost:27017/planetsdb2';
 
 // Fire off the connection to the Mongo database
 mongoose.connect(connectionString, {

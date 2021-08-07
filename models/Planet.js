@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 // Schema
 const planetSchema = new mongoose.Schema({
-    name: { type: String, required: true },
+    planetName: { type: String, required: true },
     official: { type: Boolean, required: true },
     planetType: { type: String, required: true },
     lengthOfDay: Number,

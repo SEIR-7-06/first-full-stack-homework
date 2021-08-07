@@ -7,6 +7,8 @@
     <title>Edit Planet</title>
 </head>
 <body>
+    <%- include('../partials/navbar.ejs') %>
+    
     <form action="/planets/<%= onePlanet %>?_method=PUT" method="POST"></form>
 </body>
 </html>
