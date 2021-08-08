@@ -5,8 +5,8 @@ const rowdy = require('rowdy-logger');
 const methodOverride = require('method-override');
 
 // Database and Modules // 
- const nails = require('./models/NailsModel.js')
-// const fruitsController = require('./controllers/fruitsController.js');
+ //const nails = require('./models/NailsModel.js')
+const nailController = require('./controllers/nailController.js')
 
 // Variables // 
 const app = express();
@@ -18,10 +18,12 @@ const rowdyResults = rowdy.begin(app);
 app.set('view engine', 'ejs');
 
 
+
 // Check if form data was sent in the request.
 // If so adds in to the request body (req.body)
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: false}));
+app.use('/nails', nailController);
 
 
 //////// ROUTES //////
@@ -31,39 +33,7 @@ app.get('/',(req,res) => {
     res.send("Welcome to THE GIRLSSS ROOMMM!! 💅🏽🧚🏽‍♀️💗")
 })
 
-// Index Route //
-app.get('/nails', (req, res) => {
-    res.render('index.ejs', {
-        allNails: nails
-    })
-})
 
-// New Route // 
-app.get('/nails/new', (req, res) => {
-    res.render('new.ejs')
-})
-
-// Show Route // 
-app.get('/nails/:nailIndex', (req, res) => {
-    res.render('show.ejs', {
-        oneNail: nails[req.params.nailIndex]
-    })
-})
-
-// Edit Route //
-app.get('/:nailsIndex/edit', (req, res) => {
-    res.render('edit.ejs', {
-        oneNail: nails[req.params.nailsIndex],
-        index: req.params.nailsIndex
-    })
-})
-
-
-// Create Route //
-app.post('/nails', (req, res) => {
-    nails.push(req.body);
-    res.redirect('/nails');
-})
 
 
 
