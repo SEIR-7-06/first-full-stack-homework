@@ -50,6 +50,27 @@ app.get('/nails/:nailIndex', (req, res) => {
     })
 })
 
+// Edit Route //
+app.get('/:nailsIndex/edit', (req, res) => {
+    res.render('edit.ejs', {
+        oneNail: nails[req.params.nailsIndex],
+        index: req.params.nailsIndex
+    })
+})
+
+
+// Create Route //
+app.post('/nails', (req, res) => {
+    nails.push(req.body);
+    res.redirect('/nails');
+})
+
+
+
+
+
+
+
 
 
 // Start the Sever // 

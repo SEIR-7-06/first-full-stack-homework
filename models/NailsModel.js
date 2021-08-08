@@ -5,28 +5,28 @@
 
 const nails = [
     {
-        service: 'fullset',
+        service: 'Fullset',
         color: "baby pink",
         shape: "coffin",
         date: "Aug. 28, 2021",
         time: "3:00pm"
     },
     {
-        service: 'manicure',
+        service: 'Manicure',
         color: "periwinkle",
         shape: "stiletto",
         date: "July 15, 2021",
         time: "1:45pm"
     },
     {
-        service: 'fill-in',
+        service: 'Fill-in',
         color: "white tips",
         shape: "coffin",
         date: "Oct. 7, 2012",
         time: "10:30am"
     },
     {
-        service: 'pedicure',
+        service: 'Pedicure',
         color: "white",
         shape: "round",
         date: "Aug. 10, 2021",
