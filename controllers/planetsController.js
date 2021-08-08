@@ -1,5 +1,6 @@
 // Express Router
 const express = require('express');
+const { Planet } = require('../models/index.js');
 const db = require('../models/index.js');
 const router = express.Router();
 
@@ -37,22 +38,22 @@ router.post('/', (req, res) => {
 })
 
 // Show route (GET)
-router.get('/:id', (req, res) => {
-    console.log(req.params.id)
-    db.Planet.findById(req.params.id, (err, foundPlanet) => {
+router.get('/:planetId', (req, res) => {
+    console.log(req.params.planetId);
+    db.Planet.findById( req.params.planetId, (err, foundPlanet) => {
         if(err) return console.log(err);
-        res.render('planets/planetsShow.ejs', {onePlanet: foundPlanet });
+        res.render('planets/planetsShow.ejs', { onePlanet: foundPlanet });
     })
-    res.send('STUB: Heres the individual article you requested')
+    // res.send('STUB: Heres the individual article you requested')
 })
 
 // Edit route (GET) - display the form with the current data populating the fields
-router.get('/:id/edit', (req, res) => {
-    db.Planet.findById(req.params.id, (err, foundPlanet) => { 
+router.get('/:planetId/edit', (req, res) => {
+    db.Planet.findById(req.params.planetId, (err, foundPlanet) => { 
         if(err) return console.log(err);
         res.render('planets/planetsEdit.ejs', {onePlanet: foundPlanet});
     });
-    res.send(`STUB: Heres the edit form you requested`);
+    // res.send(`STUB: Heres the edit form you requested`);
 });
 
 // Update route (PUT)

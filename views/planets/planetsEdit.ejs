@@ -10,8 +10,25 @@
 <body>
     <%- include('../partials/navbar.ejs') %>
 
+    <h1>Edit Planet Information</h1>
     <form action="/planets/<%= onePlanet %>?_method=PUT" method="POST">
-        
+        <label for="planetName">Planet name: </label>
+        <input type="text" id="planetName" name="planetName" value="<%= onePlanet.planetName %>">
+        <p>
+            <label for="official">Official: </label>
+            <input type="checkbox" id="official" name="official" <%= onePlanet.official ? "checked" : "" %> >
+        </p>
+        <p>
+            <label for="planetType">Planet type: </label>
+            <input type="text" id="planetType" name="planetType" value="<%= onePlanet.planetType %>">
+        </p>
+        <p>
+            <label for="lengthOfDay">Length of day in Earth hours: </label>
+            <input type="number" id="lengthOfDay" name="lengthOfDay" value="<%= onePlanet.lengthOfDay %>">
+        </p>
+        <p>
+            <input type="submit" value="Update Planet Info">
+        </p>
     </form>
 </body>
 </html>
