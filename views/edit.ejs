@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit a Song</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href='/music'>All Songs</a></li>
+                <li><a href='/music/new'>Add a Song</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Edit <%= oneSong.name %></h1>
+    <form action="/music/<%= index %>?_method=PUT" method="POST">
+        <label for='name'>Name:</label>
+        <input name='name' type='text' value='<%= oneSong.name %>'>
+        <br>
+        <label for='artist'>Artist:</label>
+        <input name='artist' type='text' value='<%= oneSong.artist %>'>
+        <br>
+        <label for='wouldRecommend'>Would Recommend?</label>
+        <input name='wouldRecommend' type='checkbox' <%= oneSong.wouldRecommend ? 'checked' : '' %>>
+        <br>
+        <input type='submit' value='Edit Song'>
+    </form>
+</body>
+</html>
