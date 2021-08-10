@@ -52,4 +52,16 @@ router.get('/:catId/edit', (req, res) => {
     })
 })
 
+// UPDATE
+
+router.put('/:catId', (req, res) => {
+    console.log(req.body)
+
+    db.Cat.findByIdAndUpdate(req.params.catId, req.body, (err, updatedCat) => {
+        if(err) return console.log(err)
+
+        res.redirect(`/cats/${req.params.catId}`)
+    })
+})
+
 module.exports = router
