@@ -18,23 +18,6 @@ app.use(express.urlencoded({ extended: false })) /// allows create route to Adds
 app.use('/tracks', trackController)
 
 
-
-
-
-
-// //UPDATE /////////
-// app.put('/tracks/:id', (req,res) => {
-//     res.send('UPDATE TRACK')
-// })
-
-// DELETE /////////
-app.delete('/tracks/:id', (req,res) => {
-    res.send('DELETE TRACK')
-})
-
-
-
-
 app.listen(port, () => {
     console.log(`The server is running on port: ${port} 💿 `);
     rowdyResults.print()

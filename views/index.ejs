@@ -12,7 +12,12 @@
     <a href="/tracks/<%= allTracks[i]._id  %> ">
         <h2><%= allTracks[i].name  %> </h2>
     </a>
-   <% } %> 
+
+    <form action="/tracks/<%= allTracks[i]._id  %>?_method=DELETE " method="POST">
+        <input type="submit" value="Delete <%= allTracks[i].name  %> ">
+    </form>
+
+    <% } %> 
 
 </body>
 </html>

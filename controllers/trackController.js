@@ -57,7 +57,16 @@ router.put('/:trackId', (req,res) => {
     })
 })
 
+// DELETE /////////
+router.delete('/:trackId', (req,res) => {
+    const trackId = req.params.trackId
 
+    db.Track.findByIdAndDelete(trackId, (err) => {
+        if (err) return console.log(err);
+
+        res.redirect('/tracks')
+    })
+})
 
 
 module.exports = router
