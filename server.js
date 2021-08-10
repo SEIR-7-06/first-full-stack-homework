@@ -4,13 +4,13 @@ const rowdy = require('rowdy-logger')
 const methodOverride = require('method-override')
 
 ////////////////// CONFIG ////////////////////
-const catsController = require('./controllers/catsController')
+const catsController = require('./controllers/catsController.js')
 const app = express()
 const PORT = 4000
 const rowdyResults = rowdy.begin(app)
-app.set('view engine', 'ejs')
 
 ////////////////// MIDDLEWARE ////////////////////
+app.set('view engine', 'ejs')
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'))
