@@ -7,6 +7,15 @@
     <title>New Track</title>
 </head>
 <body>
-    <h1>New Track 🎶</h1>
+    <h1>Add a new track 🎶</h1>
+    <form action="/tracks" method="POST">
+        <label for="name">  Track name:</label>
+        <input type="text" name="name">
+        <br>
+        <label for="artist">Artist:</label>
+        <input type="text" name="artist">
+        <br>
+        <input type="submit" value="Add to Songify ✅">
+    </form>
 </body>
 </html>
