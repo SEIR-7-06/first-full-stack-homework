@@ -43,4 +43,13 @@ router.delete('/:catId', (req, res) => {
     })
 })
 
+// EDIT
+router.get('/:catId/edit', (req, res) => {
+    db.Cat.findById(req.params.catId, (err, foundCat) => {
+        if (err) return console.log(err)
+
+        res.render('edit.ejs', { oneCat: foundCat })
+    })
+})
+
 module.exports = router
