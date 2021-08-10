@@ -7,16 +7,22 @@ const methodOverride = require('method-override')
 const app = express()
 const PORT = 4000
 const rowdyResults = rowdy.begin(app)
+app.set('view engine', 'ejs')
 
 ////////////////// MIDDLEWARE ////////////////////
-app.set('view engine', 'ejs')
 app.use(methodOverride('_method'))
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static('public'))
 
 ////////////////// ROUTES ////////////////////
 
 // Home Page
 app.get('/', (req, res) => {
     res.render('index.ejs')
+})
+
+app.get('/test', (req, res) => {
+    res.send('hi test route')
 })
 
 ////////////////// START SERVER ////////////////////
