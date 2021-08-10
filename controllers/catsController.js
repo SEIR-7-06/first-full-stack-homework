@@ -53,7 +53,6 @@ router.get('/:catId/edit', (req, res) => {
 })
 
 // UPDATE
-
 router.put('/:catId', (req, res) => {
     console.log(req.body)
 
