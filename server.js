@@ -18,10 +18,10 @@ app.use('/tracks', trackController)
 
 
 
-// SHOW //////////
-app.get('/tracks/:id', (req,res) => {
-    res.send('SEE TRACK') 
- })
+// // SHOW //////////
+// app.get('/tracks/:id', (req,res) => {
+//     res.send('SEE TRACK') 
+//  })
 //EDIT/////////////
 app.get('/tracks/:id/edit', (req,res) => {
     res.send('EDIT TRACK') 

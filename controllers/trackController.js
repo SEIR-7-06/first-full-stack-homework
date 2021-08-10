@@ -28,4 +28,13 @@ router.post('/', (req,res) => {
     console.log(req.body);
  })
 
+
+// SHOW //////////
+router.get('/:trackId', (req,res) => {
+     db.Track.findById(req.params.trackId, (err, showTrack) => {
+         if (err) return console.log(err)
+         res.render('show.ejs', { oneTrack: showTrack})
+     })
+ })
+
 module.exports = router
