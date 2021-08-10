@@ -16,5 +16,5 @@ mongoose.connect(connectionString, {
   });
 
   module.exports = {
-      Cat: require('./Cat.js')
+      Cat: require('./Cat')
   }

@@ -6,15 +6,16 @@ const methodOverride = require('method-override')
 ////////////////// CONFIG ////////////////////
 const catsController = require('./controllers/catsController.js')
 const app = express()
-const PORT = 4000
+const PORT =  3000
 const rowdyResults = rowdy.begin(app)
 
 ////////////////// MIDDLEWARE ////////////////////
 app.set('view engine', 'ejs')
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static('public'))
 app.use('/cats', catsController)
+app.use(express.static('public'))
+
 
 ////////////////// ROUTES ////////////////////
 
