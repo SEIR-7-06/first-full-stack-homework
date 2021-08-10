@@ -4,6 +4,7 @@ const rowdy = require('rowdy-logger')
 const methodOverride = require('method-override')
 
 ////////////////// CONFIG ////////////////////
+const catsController = require('./controllers/catsController')
 const app = express()
 const PORT = 4000
 const rowdyResults = rowdy.begin(app)
@@ -13,16 +14,13 @@ app.set('view engine', 'ejs')
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'))
+app.use('/cats', catsController)
 
 ////////////////// ROUTES ////////////////////
 
 // Home Page
 app.get('/', (req, res) => {
     res.render('index.ejs')
-})
-
-app.get('/test', (req, res) => {
-    res.send('hi test route')
 })
 
 ////////////////// START SERVER ////////////////////
