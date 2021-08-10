@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <h1>💡Welcome to The Lamp List💡</h1>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/lamps">All Lamps</a></li>
+                <li><a href="/lamps/new">Add A Lamp</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <h1>Here's all the Lamps:</h1>
+    <% for(let i = 0; i < allLamps.length; i++) { %>
+        <a href="/lamps/<%= allLamps[i].id %>">
+            <h2><%= allLamps[i].name %></h2>
+        </a>
+
+        <form action="/lamps/<%= allLamps[i].id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete this Lamp">
+        </form>
+
+        <a href="/lamps/<%= allLamps[i].id %>/edit">Edit this Lamp</a>
+    <% } %>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Lamps Boii</title>
+</head>
+<body>
+    <%- include('../partials/navbar.ejs') %>
+    <h1>Add a LAMP Boii</h1>
+
+
+    <a href="/lamps">MOAR LAMPS</a>
+    <form action="/lamps" method="POST">
+        <label for="name">LAMP: </label>
+        <input type="text" id="name" name="name">
+        <br />
+        <br />
+        <label for="content">DESCRIBE SHINEY BOI: </label>
+        <input id="content" name="content" cols="50" rows="20">
+        <br />
+        <br />
+        <input type="submit" value="Add Lamp to List of Perfect Beings">
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+
+
+//WHY DO WE HAVE INDEX.JS AND INDEX.EJS ITS JUST NOT RIGHT!!!
+const mongoose = require('mongoose')
+
+const connectionString = 'mongodb://localhost:27017/blogdb';
+
+//Fire off connection to mongo db
+mongoose.connect(connectionString, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+})
+
+mongoose.connection.on('connected', () => {
+    console.log(`Mongoose connected to ${connectionString}`)
+})
+
+// Making the Lamp model available from this file
+module.exports = {
+    Author: require('./lamps.js'),
+  }
