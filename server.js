@@ -19,6 +19,8 @@ app.get('/', (req, res) => {
     res.render('index.ejs')
 })
 
+////////////////// START SERVER ////////////////////
 app.listen(PORT, () => {
+    console.log('Server is running on localhost:', PORT)
     rowdyResults.print
 })
