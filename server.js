@@ -1,15 +1,17 @@
 /// Required modules
 const express = require('express')
+const rowdy = require('rowdy-logger')
 
 //variables
 const app = express()
 const port = 4000
+const rowdyResults = rowdy.begin(app)
  
 // Mongoose DATABASE ////////
 const db = require('./models/index')
 
 //Index Route///////////////////
-app.get('/', (req,res) => {
+app.get('/songs', (req,res) => {
    res.send('Welcome to Songify') 
 })
 // NEW /////////////// 
@@ -44,4 +46,5 @@ app.delete('/songs/:id', (req,res) => {
 
 app.listen(port, () => {
     console.log(`The server is running on port: ${port} 💿 `);
+    rowdyResults.print()
 })
