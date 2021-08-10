@@ -15,5 +15,11 @@
     <p>Type: <%= onePlanet.planetType %></p>
     <p>Length of Day in Earth Hours: <%= onePlanet.lengthOfDay %></p>
 
+    <p><button><a href="/planets/<%= onePlanet.id %>/edit">Edit this planet's information</a></button></p>
+    <form action="/planets/<%= onePlanet %>" method="PUT">
+        <p>
+            <input type="submit" value="Delete this article">
+        </p>
+    </form>
 </body>
 </html>

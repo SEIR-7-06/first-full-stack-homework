@@ -31,6 +31,11 @@ router.get('/new', (req, res) => {
 // Create a route for handling a POST request to /planets
 router.post('/', (req, res) => {
     console.log(req.body);
+    if(req.body.official === 'on') {
+        req.body.official = true;
+    } else {
+        req.body.official = false;
+    };
     db.Planet.create(req.body, (err, createdPlanet) => {
         if (err) return console.log(err);
         res.redirect('/planets');
@@ -41,8 +46,9 @@ router.post('/', (req, res) => {
 router.get('/:planetId', (req, res) => {
     console.log(req.params.planetId);
     db.Planet.findById( req.params.planetId, (err, foundPlanet) => {
-        if(err) return console.log(err);
-        res.render('planets/planetsShow.ejs', { onePlanet: foundPlanet });
+        if(err) { res.send(err) };         // instead of console.log because that was hanging
+        res.render('planets/planetsShow.ejs', { 
+            onePlanet: foundPlanet });
     })
     // res.send('STUB: Heres the individual article you requested')
 })
@@ -57,25 +63,30 @@ router.get('/:planetId/edit', (req, res) => {
 });
 
 // Update route (PUT)
-router.put('/:id', (req, res) => {
-    db.Planet.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        (err) => {
-            if(err) return console.log(err)
-            res.redirect('/planets')
-        }
+router.put('/:planetId', (req, res) => {
+    console.log(req.params.planetId);
+    if(req.body.official === 'on') {
+        req.body.official = true;
+    } else {
+        req.body.official = false;
+    };
+    db.Planet.findByIdAndUpdate(req.params.planetId, req.body,
+        (err, foundPlanet) => {
+            if(err) { res.send(err) };
+            res.redirect(`/planets/${req.params.planetId}`)
+        },
     )
-    res.send('STUB: Article has been updated')
-})
+    // res.redirect('/planets/:planetId');
+    // res.send('STUB: Article has been updated')
+});
 
-// Delete route (PUT)
-router.put('/:id', (req, res) => {
-    db.Planet.findByIdAndRemove(req.params.id, (err, foundPlanet => {
-        if(err) return console.log(err);
+// Delete route (DELETE)
+router.delete('/:planetId', (req, res) => {
+    db.Planet.findByIdAndRemove(req.params.planetId, (err, foundPlanet => {
+        if(err) { res.send(err) };
         res.redirect('/planets');
     }));
-    res.send('STUB: Article has been deleted')
+    // res.send('STUB: Article has been deleted')
 })
 
 module.exports = router;

@@ -11,7 +11,7 @@
     <%- include('../partials/navbar.ejs') %>
 
     <h1>Edit Planet Information</h1>
-    <form action="/planets/<%= onePlanet %>?_method=PUT" method="POST">
+    <form action="/planets/<%= onePlanet._id %>?_method=PUT" method="POST">
         <label for="planetName">Planet name: </label>
         <input type="text" id="planetName" name="planetName" value="<%= onePlanet.planetName %>">
         <p>
@@ -28,6 +28,11 @@
         </p>
         <p>
             <input type="submit" value="Update Planet Info">
+        </p>
+    </form>
+    <form action="/planets/<%= onePlanet %>?_method=DELETE">
+        <p>
+            <input type="submit" value="Delete this article">
         </p>
     </form>
 </body>
