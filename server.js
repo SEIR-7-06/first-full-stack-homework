@@ -12,36 +12,36 @@ const rowdyResults = rowdy.begin(app)
  
 // MIDDLEWARE ////////
 
-app.use('/track', trackController)
+app.use('/tracks', trackController)
 
 //Index Route///////////////////
-app.get('/track', (req,res) => {
-   res.send('Welcome to Songify') 
-})
+// app.get('/tracks', (req,res) => {
+//    res.send('Welcome to Songify') 
+// })
 // NEW /////////////// 
-app.get('/track/new', (req,res) => {
+app.get('/tracks/new', (req,res) => {
    res.send('NEW TRACK') 
 })
 // CREATE////////
-app.post('/track', (req,res) => {
+app.post('/tracks', (req,res) => {
    res.send('CREATE TRACK') 
 })
 
 // SHOW //////////
-app.get('/track/:id', (req,res) => {
+app.get('/tracks/:id', (req,res) => {
     res.send('SEE TRACK') 
  })
 //EDIT/////////////
-app.get('/track/:id/edit', (req,res) => {
+app.get('/tracks/:id/edit', (req,res) => {
     res.send('EDIT TRACK') 
  })
 //UPDATE /////////
-app.put('/track/:id', (req,res) => {
+app.put('/tracks/:id', (req,res) => {
     res.send('UPDATE TRACK')
 })
 
 // DELETE /////////
-app.delete('/track/:id', (req,res) => {
+app.delete('/tracks/:id', (req,res) => {
     res.send('DELETE TRACK')
 })
 

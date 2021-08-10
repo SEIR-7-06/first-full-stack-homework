@@ -5,13 +5,14 @@ const router = express.Router();
 const db = require('../models/index')
 
 
-router.get('/test/:firstName', (req, res) => {
-    console.log(req.params);
-  
-    res.send('You hit the test route,')
-  })
-
-
+///// INDEX ROUTE /////////////
+router.get('/', (req, res) => {
+    db.Track.find({}, (err, allTracks) => {
+        if (err) return console.log(err)
+        res.render('index.ejs', {allTracks: allTracks})
+    })
+    // res.send('index controller')
+})
 
 
 
