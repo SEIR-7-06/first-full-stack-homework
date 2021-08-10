@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 const robotSchema = new mongoose.Schema({
     name: {type: String, required: true, unique: true}, 
-    price: {type: Number, required: true},
-    company: {type: String, required: true, unique: true},
-    launchDate: {type: Date, required: true, unique: true}
+    price: {type: String, required: true},
+    company: {type: String, required: true},
+    launchDate: {type: String, required: true, unique: true}
 })
 
-const Robot = mongoose.model('Robot', robotSchema);
+const Robot = mongoose.model('Robots', robotSchema);
 
 module.exports = Robot;

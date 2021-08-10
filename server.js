@@ -22,7 +22,6 @@ app.get('/', (req, res) => {
 })
 
 
-
 app.listen(PORT, () => {
     console.log(`This server is running on port: ${PORT} 🦿`);
     rowdyResults.print()
