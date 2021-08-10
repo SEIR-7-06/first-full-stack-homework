@@ -45,4 +45,19 @@ router.get('/:trackId/edit', (req,res) => {
     })
  })
 
+
+ //UPDATE /////////
+router.put('/:trackId', (req,res) => {
+    
+    console.log(req.body);
+
+    db.Track.findByIdAndUpdate(req.params.trackId, req.body, (err, updatedTrack) => {
+        if (err) return console.log(err)
+        res.redirect('/tracks/' + req.params.trackId)
+    })
+})
+
+
+
+
 module.exports = router

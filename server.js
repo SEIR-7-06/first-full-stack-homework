@@ -21,14 +21,11 @@ app.use('/tracks', trackController)
 
 
 
-// //EDIT/////////////
-// app.get('/tracks/:id/edit', (req,res) => {
-//     res.send('EDIT TRACK') 
-//  })
-//UPDATE /////////
-app.put('/tracks/:id', (req,res) => {
-    res.send('UPDATE TRACK')
-})
+
+// //UPDATE /////////
+// app.put('/tracks/:id', (req,res) => {
+//     res.send('UPDATE TRACK')
+// })
 
 // DELETE /////////
 app.delete('/tracks/:id', (req,res) => {
