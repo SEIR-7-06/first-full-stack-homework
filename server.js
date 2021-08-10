@@ -11,18 +11,15 @@ const port = 4000
 const rowdyResults = rowdy.begin(app)
  
 // MIDDLEWARE ////////
-
+app.use(express.urlencoded({ extended: false }))
 app.use('/tracks', trackController)
 
 
-// // NEW /////////////// 
-// app.get('/tracks/new', (req,res) => {
-//    res.send('NEW TRACK') 
+
+// // CREATE////////
+// app.post('/tracks', (req,res) => {
+//    res.send('CREATE TRACK') 
 // })
-// CREATE////////
-app.post('/tracks', (req,res) => {
-   res.send('CREATE TRACK') 
-})
 
 // SHOW //////////
 app.get('/tracks/:id', (req,res) => {

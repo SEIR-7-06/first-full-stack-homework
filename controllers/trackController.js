@@ -19,6 +19,14 @@ router.get('/new', (req,res) => {
     res.render('new.ejs') 
  })
 
-
+// CREATE////////
+router.post('/', (req,res) => {
+    // res.send('CREATE TRACK')
+    db.Track.create(req.body, (err, createdTrack)=> {
+        if (err) return console.log(err)
+        res.redirect('/tracks')
+    }) 
+    console.log(req.body);
+ })
 
 module.exports = router
