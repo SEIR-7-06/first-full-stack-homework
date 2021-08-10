@@ -4,6 +4,9 @@ const express = require('express')
 //variables
 const app = express()
 const port = 4000
+ 
+// Mongoose DATABASE ////////
+const db = require('./models/index')
 
 //Index Route///////////////////
 app.get('/', (req,res) => {
