@@ -8,5 +8,11 @@
 </head>
 <body>
     <h1>Welcome to Songify 💿</h1>
+   <% for(let i = 0; i < allTracks.length; i++) {%> 
+    <a href="/tracks/<%= allTracks[i]._id  %> ">
+        <h2><%= allTracks[i].name  %> </h2>
+    </a>
+   <% } %> 
+
 </body>
 </html>

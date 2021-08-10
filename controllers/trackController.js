@@ -21,7 +21,6 @@ router.get('/new', (req,res) => {
 
 // CREATE////////
 router.post('/', (req,res) => {
-    // res.send('CREATE TRACK')
     db.Track.create(req.body, (err, createdTrack)=> {
         if (err) return console.log(err)
         res.redirect('/tracks')
