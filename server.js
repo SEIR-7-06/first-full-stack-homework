@@ -2,42 +2,46 @@
 const express = require('express')
 const rowdy = require('rowdy-logger')
 
+//Controller//////////
+const trackController = require('./controllers/trackController')
+
 //variables
 const app = express()
 const port = 4000
 const rowdyResults = rowdy.begin(app)
  
-// Mongoose DATABASE ////////
-const db = require('./models/index')
+// MIDDLEWARE ////////
+
+app.use('/track', trackController)
 
 //Index Route///////////////////
-app.get('/songs', (req,res) => {
+app.get('/track', (req,res) => {
    res.send('Welcome to Songify') 
 })
 // NEW /////////////// 
-app.get('/songs/new', (req,res) => {
+app.get('/track/new', (req,res) => {
    res.send('NEW TRACK') 
 })
 // CREATE////////
-app.post('/songs', (req,res) => {
+app.post('/track', (req,res) => {
    res.send('CREATE TRACK') 
 })
 
 // SHOW //////////
-app.get('/songs/:id', (req,res) => {
+app.get('/track/:id', (req,res) => {
     res.send('SEE TRACK') 
  })
 //EDIT/////////////
-app.get('/songs/:id/edit', (req,res) => {
+app.get('/track/:id/edit', (req,res) => {
     res.send('EDIT TRACK') 
  })
 //UPDATE /////////
-app.put('/songs/:id', (req,res) => {
+app.put('/track/:id', (req,res) => {
     res.send('UPDATE TRACK')
 })
 
 // DELETE /////////
-app.delete('/songs/:id', (req,res) => {
+app.delete('/track/:id', (req,res) => {
     res.send('DELETE TRACK')
 })
 
