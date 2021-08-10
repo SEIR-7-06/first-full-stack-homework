@@ -14,14 +14,11 @@ const rowdyResults = rowdy.begin(app)
 
 app.use('/tracks', trackController)
 
-//Index Route///////////////////
-// app.get('/tracks', (req,res) => {
-//    res.send('Welcome to Songify') 
+
+// // NEW /////////////// 
+// app.get('/tracks/new', (req,res) => {
+//    res.send('NEW TRACK') 
 // })
-// NEW /////////////// 
-app.get('/tracks/new', (req,res) => {
-   res.send('NEW TRACK') 
-})
 // CREATE////////
 app.post('/tracks', (req,res) => {
    res.send('CREATE TRACK') 

@@ -4,6 +4,7 @@ const router = express.Router();
 // Mongoose DATABASE ////////
 const db = require('../models/index')
 
+/// base route '/tracks' //
 
 ///// INDEX ROUTE /////////////
 router.get('/', (req, res) => {
@@ -11,9 +12,12 @@ router.get('/', (req, res) => {
         if (err) return console.log(err)
         res.render('index.ejs', {allTracks: allTracks})
     })
-    // res.send('index controller')
 })
 
+// NEW /////////////// 
+router.get('/new', (req,res) => {
+    res.render('new.ejs') 
+ })
 
 
 
