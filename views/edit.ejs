@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Track</title>
+</head>
+<body>
+    <h1>Edit <%= oneTrack.name  %> by <%= oneTrack.artist  %>  </h1>
+    <form action="/tracks/<%= oneTrack._id  %>?_method=PUT" method="POST">
+        <label for="name">  Track name:</label>
+        <input type="text" name="name" value="<%= oneTrack.name  %>">
+        <br>
+        <label for="artist">Artist:</label>
+        <input type="text" name="artist" value="<%= oneTrack.artist  %>">
+        <br>
+        <label for="genre">Genre:</label>
+        <input type="text" name="genre" value="<%= oneTrack.genre  %>">
+        <br>
+        <label for="date">Date:</label>
+        <input type="text" name="date" value="<%= oneTrack.date  %>">
+        <br>
+        <input type="submit" value="Update to Songify ✅">
+    </form>
+</body>
+</html>

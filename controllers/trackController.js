@@ -37,4 +37,12 @@ router.get('/:trackId', (req,res) => {
      })
  })
 
+ //EDIT/////////////
+router.get('/:trackId/edit', (req,res) => {
+    db.Track.findById(req.params.trackId, (err, showTrack) => {
+        if (err) return console.log(err)
+        res.render('edit.ejs', { oneTrack: showTrack})
+    })
+ })
+
 module.exports = router

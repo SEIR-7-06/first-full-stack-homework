@@ -1,6 +1,7 @@
 /// Required modules
 const express = require('express')
 const rowdy = require('rowdy-logger')
+const methodOverride = require('method-override')
 
 //Controller//////////
 const trackController = require('./controllers/trackController')
@@ -12,20 +13,18 @@ const rowdyResults = rowdy.begin(app)
  
 // MIDDLEWARE ////////
 app.set('view engine', 'ejs')
+app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false })) /// allows create route to Adds to DB
 app.use('/tracks', trackController)
 
 
 
 
-// // SHOW //////////
-// app.get('/tracks/:id', (req,res) => {
-//     res.send('SEE TRACK') 
+
+// //EDIT/////////////
+// app.get('/tracks/:id/edit', (req,res) => {
+//     res.send('EDIT TRACK') 
 //  })
-//EDIT/////////////
-app.get('/tracks/:id/edit', (req,res) => {
-    res.send('EDIT TRACK') 
- })
 //UPDATE /////////
 app.put('/tracks/:id', (req,res) => {
     res.send('UPDATE TRACK')
