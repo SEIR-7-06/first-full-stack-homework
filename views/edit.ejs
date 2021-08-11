@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit a Name</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/names">All names</a></li>
+                <li><a href="/names/new">Create a Name</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Edit the <%= oneName.firstName %></h1>
+    <form action="/name/<%= oneName._id" %>?_method=PUT" ?_method="POST">
+        <label for="firstName">Name:</label>
+        <input name="name" type="text" value="<%= oneName.firstName %>">
+        <br>
+
+        <label for="letters">Letters:</label>
+        <input name="letters" type="text" value="<%= oneName.letters %>">
+        <br>
+        <label for="startsWithAConsonant" >Starts with a Consonant?</label>
+        <input name="startsWithAConsonant" type="checkbox" <%= oneName.startsWithAConsonant ? "checked" : "" %>>>
+        <br>
+        <input type="submit" value="Update Name">
+    </form>
+</body>
+</html>
