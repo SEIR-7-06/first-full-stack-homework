@@ -9,4 +9,3 @@ const residentSchema = new mongoose.Schema({
 const Resident = mongoose.model('Resident', residentSchema)
 
 module.exports = Resident 
-
