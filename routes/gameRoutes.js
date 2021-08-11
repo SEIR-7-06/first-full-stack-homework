@@ -49,4 +49,11 @@ router.put('/:id', (req, res) => {
     })
 })
 
+router.delete('/:id', (req, res) => {
+    db.findByIdAndDelete(req.params.id, (err, deleteItem) => {
+        if(err) return console.log(err)
+        res.redirect(`/game`)
+    })
+})
+
 module.exports = router;
