@@ -3,6 +3,8 @@ const app = express();
 const gameRouter = require('./routes/gameRoutes.js')
 const methodOverride = require('method-override')
 const PORT = 4000;
+const rowdy = require('rowdy-logger')
+const rowdyResults = rowdy.begin(app)
 
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
@@ -15,5 +17,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
+    rowdyResults.print();
     console.log(`Running on localhost port#: ${PORT}`);
   })
