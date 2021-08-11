@@ -15,3 +15,5 @@ const names = [
         startsWithAConsonant: true
     }
 ];
+
+module.exports = names;
