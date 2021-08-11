@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Lamp Show</title>
+</head>
+<body>
+    <%- include('../partials/navbar.ejs') %>
+    
+    <h1>Lamp Show Page</h1>
+    <h2><%= lamp.title %></h2>
+    <p><%= lamp.content %></p>
+
+    <a href="/lamps/<%= lamp._id %>/edit">Edit this Lamp</a>
+
+    <form action="/lamps/<%= lamp._id %>?_method=DELETE" method="post">
+        <input type="submit" value="Delete Lamp"/>
+    </form>
+</body>
+</html>

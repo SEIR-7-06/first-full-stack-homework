@@ -1,0 +1,20 @@
+body {
+    margin: 0px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(61, 208, 31);
+    padding: 5px;
+}
+
+nav a {
+    color: rgb(68, 106, 146);
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+nav a:hover {
+    color: chartreuse;
+}
