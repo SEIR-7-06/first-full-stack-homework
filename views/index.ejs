@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+<body>
+    <h1>The Bands:</h1>
+
+    <ul>
+        <% for(let i = 0; i < allMusicians.length; i++) { %>
+            <li>
+                <!-- Will link to the show page for that band -->
+                <a href="/musicians/<%= allMusicians[i]._id %>">
+                    <h2><%= allMusicians[i].name %></h2>
+                </a>
+                
+                <!-- Will hit the delete music route for that band -->
+                <form action="/musicians/<%= allMusicians[i]._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Nix this Band">
+                </form>
+                
+                <!-- redirects to the edit page for that band -->
+                <a href="/musicians/<%= allMusicians[i]._id %>/edit">Edit this Band</a>
+            </li>
+        <% } %>
+    </ul>
+</body>
+</html>

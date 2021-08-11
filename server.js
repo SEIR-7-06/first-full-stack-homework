@@ -4,7 +4,7 @@ const PORT = 4000;
 
 
 
-const musicians = ['american nightmare', 'hope con', 'converge'];
+
 
 
 app.get('/musicians/:musicIndex', (req, res) =>{
