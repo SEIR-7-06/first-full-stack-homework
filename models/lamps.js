@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 //Setting up that there schema (idk what that means)
 //instructions say thats what we want the Author to look like
-const lampsSchema new mongoose.lampsSchema({
+const lampSchema = new mongoose.Schema({
     lampType: { type: String, required: true}
 });
 
@@ -13,4 +13,4 @@ const Lamp = mongoose.model('Lamp', lampSchema)
 //we decide to input like onto the page or something
 
 //Export the Lampie boys model
-module.exports = Author;
+module.exports = Lamp;

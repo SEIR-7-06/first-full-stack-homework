@@ -37,7 +37,7 @@ app.use('/lamps', lampsController)
 /////////////////// Routes /////////////////////////////
 // Home Page Route
 app.get('/', (req, res) => {
-    res.send('index.ejs')
+    res.render('index.ejs')
 })
 
 /////////////////// Start the Server ///////////////////

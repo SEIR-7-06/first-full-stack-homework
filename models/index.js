@@ -4,7 +4,7 @@
 //WHY DO WE HAVE INDEX.JS AND INDEX.EJS ITS JUST NOT RIGHT!!!
 const mongoose = require('mongoose')
 
-const connectionString = 'mongodb://localhost:27017/blogdb';
+const connectionString = 'mongodb://localhost:27017/lampsdb';
 
 //Fire off connection to mongo db
 mongoose.connect(connectionString, {
@@ -20,5 +20,5 @@ mongoose.connection.on('connected', () => {
 
 // Making the Lamp model available from this file
 module.exports = {
-    Author: require('./lamps.js'),
+    Lamp: require('./lamps.js'),
   }
