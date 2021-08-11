@@ -18,7 +18,7 @@
 
 <h1>Edit <%= oneNail.service %> Appointment 💛📝</h1>
 
-<form action="/nails <%= index %>?_method=PUT" method="POST">
+<form action="/nails/<%= oneNail._id %>?_method=PUT" method="POST">
     <label for="service">Service:</label>
     <input name="service"  type="text" value="<%= oneNail.service %>">
     <br>
