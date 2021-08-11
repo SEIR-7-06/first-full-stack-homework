@@ -5,3 +5,5 @@ const nameSchema = new mongoose.Schema({
     startsWithAConsonant: {type: Boolean, required: true}
 });
     
+const Name = mongoose.model("Name", nameSchema);
+module.exports = Name
