@@ -7,6 +7,7 @@
     <title>Songify</title>
 </head>
 <body>
+    <%- include('./partials/navbar')  %> 
     <h1>Welcome to Songify 💿</h1>
    <% for(let i = 0; i < allTracks.length; i++) {%> 
     <a href="/tracks/<%= allTracks[i]._id  %> ">
@@ -17,6 +18,7 @@
         <input type="submit" value="Delete <%= allTracks[i].name  %> ">
     </form>
 
+    <a href="/tracks/<%= allTracks[i]._id  %>/edit ">Edit this track </a>
     <% } %> 
 
 </body>

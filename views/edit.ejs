@@ -7,6 +7,7 @@
     <title>Edit Track</title>
 </head>
 <body>
+    <%- include('./partials/navbar')  %>
     <h1>Edit <%= oneTrack.name  %> by <%= oneTrack.artist  %>  </h1>
     <form action="/tracks/<%= oneTrack._id  %>?_method=PUT" method="POST">
         <label for="name">  Track name:</label>
