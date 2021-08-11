@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Track</title>
+</head>
+<body>
+    <%- include('./partials/navbar')  %>
+    <h1>Add a new track 🎶</h1>
+    <form action="/tracks" method="POST">
+        <label for="name">  Track name:</label>
+        <input type="text" name="name">
+        <br>
+        <label for="artist">Artist:</label>
+        <input type="text" name="artist">
+        <br>
+        <label for="genre">Genre:</label>
+        <input type="text" name="genre">
+        <br>
+        <label for="date">Date:</label>
+        <input type="text" name="date">
+        <br>
+        <input type="submit" value="Add to Songify ✅">
+    </form>
+</body>
+</html>

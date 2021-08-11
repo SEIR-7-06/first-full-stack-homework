@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songify</title>
+</head>
+<body>
+    <%- include('./partials/navbar')  %> 
+    <h1>Welcome to Songify 💿</h1>
+   <% for(let i = 0; i < allTracks.length; i++) {%> 
+    <a href="/tracks/<%= allTracks[i]._id  %> ">
+        <h2><%= allTracks[i].name  %> </h2>
+    </a>
+
+    <form action="/tracks/<%= allTracks[i]._id  %>?_method=DELETE " method="POST">
+        <input type="submit" value="Delete <%= allTracks[i].name  %> ">
+    </form>
+
+    <a href="/tracks/<%= allTracks[i]._id  %>/edit ">Edit this track </a>
+    <% } %> 
+
+</body>
+</html>
