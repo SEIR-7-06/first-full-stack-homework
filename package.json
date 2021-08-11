@@ -4,8 +4,7 @@
   "description": "![GA Logo](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -18,6 +17,11 @@
   },
   "homepage": "https://github.com/npkane75/first-full-stack-homework#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "logger": "^0.0.1",
+    "mongoose": "^5.13.7",
+    "rowdy": "^0.5.0",
+    "rowdy-logger": "^1.0.2"
   }
 }
