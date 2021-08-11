@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Name</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/names">All Names</a></li>
+                <li><a href="/names/new">Create a Name</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Create a new Name</h1>
+    <form action="/names" method="POST">
+    <label for="firstName">Name:</label>
+    <input name="firstName" type="text">
+    <br>
+    <label for="letters">Letters:</label>
+    <input name="letters"type="text">
+    <br>
+    <label for="startsWithAConsonant">Starts with a Consonant?</label>
+    <br>
+    <input type="submit" value="Create Name">    
+</form>    
+</body>
+</html>

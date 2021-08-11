@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name index</title>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/names">All names</a></li>
+                <li><a href="/names/new">Create a name</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Here are all the names:</h1>
+    <% for (let i=0; i < allNames.length; i++) { %>
+        <a href="/names/<%= allNames[i]._id %>">
+            <h2><%= allNames[i].firstName%></h2>
+        </a>
+        <form action="/names/<%= allNames[i]._id %>?_method_DELETE" method="POST">
+            <input type="submit" value="Delete this Name">
+        </form>
+        <a href="/names/<%= allNames[i]._id %>edit">Ediit this name</a>
+    <% } %>
+</body>
+</html>
