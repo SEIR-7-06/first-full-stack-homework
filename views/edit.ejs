@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit Page</h1>
+    <h2>Game Name: <%= foundGame.gameName %></h2>
+    <h3>Game Hours: <%= foundGame.gameHours %></h3>
+    <h3>Game Good?: <%= foundGame.gameGood %></h3>
+    <form method="POST" action="/game/<%= foundGame._id %>?_method=PUT">
+        <br>
+        <label for="gameName">New Name of the Game:</label>
+        <input name="gameName" type="text"> 
+        <br>
+        <label for="gameHours">New Game Hours:</label>
+        <input name="gameHours" type="text">
+        <br>
+        <label for="gameGood">New Game Good?:</label>
+        <select name='gameGood'>
+            <option value='0'>Good Game</option>
+            <option value='1'>Bad Game</option>
+        </select>
+        <br>
+        <input type="submit">
+    </form>
+</body>
+</html>

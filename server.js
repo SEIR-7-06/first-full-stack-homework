@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 const gameRouter = require('./routes/gameRoutes.js')
+const methodOverride = require('method-override')
 const PORT = 4000;
 
 app.set('view engine', 'ejs');
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 
 

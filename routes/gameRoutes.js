@@ -33,4 +33,20 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.get('/:id/edit', (req, res) => {
+    db.findById(req.params.id, (err, foundGame) => {
+        if(err) return console.log(err)
+        res.render('edit.ejs', {
+            foundGame: foundGame
+        })
+    })
+})
+
+router.put('/:id', (req, res) => {
+    db.findByIdAndUpdate(req.params.id, req.body, (err, foundGame) => {
+        if(err) return console.log(err)
+        res.redirect(`/game/${req.params.id}`)
+    })
+})
+
 module.exports = router;
