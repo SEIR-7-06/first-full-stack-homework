@@ -16,9 +16,9 @@ const router = express.Router();
 router.get('/', (req, res) => {
     db.Planet.find({}, (err, allPlanets) => {
         if (err) return console.log(err);
-        console.log(`All Planets ${allPlanets}`);
-        console.log(`Planets Index 0 ${allPlanets[0]}`);
-        console.log(`Planets Name ${allPlanets[0].planetName}`);
+        // console.log(`All Planets ${allPlanets}`);
+        // console.log(`Planets Index 0 ${allPlanets[0]}`);
+        // console.log(`Planets Name ${allPlanets[0].planetName}`);
         res.render('planets/planetsIndex.ejs', { allPlanets: allPlanets });
     });
 });
@@ -30,7 +30,7 @@ router.get('/new', (req, res) => {
 
 // Create a route for handling a POST request to /planets
 router.post('/', (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     if(req.body.official === 'on') {
         req.body.official = true;
     } else {
@@ -44,7 +44,7 @@ router.post('/', (req, res) => {
 
 // Show route (GET)
 router.get('/:planetId', (req, res) => {
-    console.log(req.params.planetId);
+    console.log('req.params.planetId in Show Route is: ' + req.params.planetId);
     db.Planet.findById( req.params.planetId, (err, foundPlanet) => {
         if(err) { res.send(err) };         // instead of console.log because that was hanging
         res.render('planets/planetsShow.ejs', { 
@@ -64,7 +64,7 @@ router.get('/:planetId/edit', (req, res) => {
 
 // Update route (PUT)
 router.put('/:planetId', (req, res) => {
-    console.log(req.params.planetId);
+    // console.log(req.params.planetId);
     if(req.body.official === 'on') {
         req.body.official = true;
     } else {
@@ -81,12 +81,17 @@ router.put('/:planetId', (req, res) => {
 });
 
 // Delete route (DELETE)
-router.delete('/:planetId', (req, res) => {
-    db.Planet.findByIdAndRemove(req.params.planetId, (err, foundPlanet => {
-        if(err) { res.send(err) };
-        res.redirect('/planets');
-    }));
+router.delete('/:planetId', async (req, res) => {
+    // const planetIdNew = mongoose.Types.ObjectId(req.params.planetId);
+    // console.log(`planetIdNew is: ${planetIdNew}`);
+    // console.log(`req.params.planetId is: ${req.params.planetId}`);
+    // db.Planet.findByIdAndDelete(req.params.planetId, (err, foundPlanet => {
+    //     if(err) { res.send(err) };
+    //     res.redirect('/planets');
+    // }));
     // res.send('STUB: Article has been deleted')
+    await db.Planet.findByIdAndDelete(req.params.planetId);
+    res.redirect('/planets');
 })
 
 module.exports = router;

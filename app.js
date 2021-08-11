@@ -16,7 +16,7 @@ const rowdyResults = rowdy.begin(app);
 
 
 /* MIDDLEWARE */
-app.set('view engine', 'ejs'); //allows ejs to be used to render the view pages
+
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
