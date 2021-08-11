@@ -2,7 +2,7 @@ const express = require("express");
 const methodOverride = require("method-override");
 const rowdyLogger = require("rowdy-logger");
 const app = express();
-const controller = require("./controllers/controller");
+const controller = require("./controller/controller");
 const port = 4000;
 const rowdy = rowdyLogger.begin(app);
 app.set("view engine", "ejs");
