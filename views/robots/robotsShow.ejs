@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot</title>
+</head>
+<body>
+    <h1> Show page for <%= robot.robotName %></h1>
+
+    <main>
+        <section> 
+            <h2>Robot Attributes: </h2>
+            <ul>
+                <li>Name: <%= robot.name %></li>
+                <li>Price: <%= robot.price %></li>
+                <li>Company: <%= robot.company %></li>
+                <li>LaunchDate: <%= robot.launchDate %></li>
+            </ul>
+        </section>
+
+        <section>
+            <form action="/robots/<%= robot._id %>?_method=DELETE" method="POST">
+                <input type="submit" value="Terminate Robot">
+            </form>
+            <a href="/robots/<%= robot._id %>/edit">Edit da Bot</a>
+        </section>
+    </main>
+</body>
+</html>

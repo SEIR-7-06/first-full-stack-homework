@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Models</title>
+</head>
+
+<body>
+    <h1>These are the Bots!</h1>
+    <a href='/'>Main Site</a>
+    <ul>
+        <% for (let i = 0; i < allRobots.length; i++) { %>
+            <li>
+                <a href="/robots/<%= allRobots[i]._id %>">
+                    <%= allRobots[i].name %>
+                </a>
+            </li>
+            <% } %>
+    </ul>
+    <a href="/robots/new">Make a New Bot</a>
+</body>
+
+</html>
